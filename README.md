@@ -1,7 +1,8 @@
 
 # ASP NET CORE WEB API - Clean Architecture
 
-Développement d'une API Web en cours, avec.NET 8, en suivant le cours Udemy : 
+Développement d'une API Web en cours suivant le pattern CQRS, avec .NET 8, en suivant le cours Udemy : 
+https://www.udemy.com/course/aspnet-core-web-api-clean-architecture-azure
 
 ## Objectifs :
 
@@ -14,7 +15,10 @@ Développement d'une API Web en cours, avec.NET 8, en suivant le cours Udemy :
 - Clean Architectute ✅
 - CRUD ✅
 - Authentification ✅
+- Authorization
+- Filtering/Pagination
 - CI/CD
+- Test
 - Déploiement
 
 ## Librairies utilisés (pour le moment) :
