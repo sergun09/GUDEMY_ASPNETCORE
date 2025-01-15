@@ -7,8 +7,17 @@ Développement d'une API Web en cours, avec.NET 8, en suivant le cours Udemy :
 
 - Solifider mes compétences avec le framework ASP NET CORE
 - Apprendre et mettre en pratique une nouvelle architecture logiciel
-- Développer des compétences cloud et apprendre le déploiement automatique (Test automatisés, Github Actions, Azure, Monitoring, CI/``...)
+- Développer des compétences cloud et apprendre le déploiement automatique (Test automatisés, Github Actions, Azure, Monitoring, CI/CD...)
 
 ## Fonctionnalités :
 
-- Authentification 
+- Clean Architectute ✅
+- CRUD ✅
+- Authentification ✅
+- CI/CD
+- Déploiement
+
+## Librairies utilisés (pour le moment) :
+
+- EF Core
+- Mediatr
