@@ -1,0 +1,69 @@
+@Restaurants.API_HostAddress = https://localhost:7010
+
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants
+
+###
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/0
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name": "Big-BA",
+  "Category": "Fast-Food",
+  "Description": "Des burgers raffinés!",
+  "HasDelivery": true,
+  "ContactEmail": "contact@bigb.com",
+  "ContactNumber": "0000000000",
+  "City": "Bordeaux",
+  "PostalCode": "33000",
+  "Street": "Rue Du Vin"
+}
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/5
+
+###
+
+PATCH {{Restaurants.API_HostAddress}}/api/restaurants/6
+Content-Type: application/json
+
+{
+  "Name": "Big-BAM",
+  "Description": "Des burgers raffinés!",
+  "HasDelivery": true
+}
+
+###
+
+POST {{Restaurants.API_HostAddress}}/api/restaurants/4/dishes
+Content-Type: application/json
+
+{
+  "Name": "Bacon Burger du restaurant 4",
+  "Description": "Bacon croustillant",
+  "Price": 15,
+  "KiloCalories": 78
+}
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/4/dishes
+
+###
+
+GET {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/5
+
+###
+
+DELETE {{Restaurants.API_HostAddress}}/api/restaurants/6/dishes/5
+
+###
