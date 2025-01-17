@@ -7,6 +7,7 @@ using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
 using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 using Restaurants.Application.Restaurants.Dtos;
 using Microsoft.AspNetCore.Authorization;
+using Restaurants.Domain.Constants;
 
 namespace Restaurants.API.Controllers;
 
@@ -31,6 +32,7 @@ public class RestaurantsController(IMediator mediator) : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = UserRoles.Owner)]
     public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantCommand command)
     {
         var restaurantIdCreated = await mediator.Send(command);
