@@ -9,9 +9,9 @@ namespace Restaurants.Application.Users.Commands.AssignUserRole
     public class AssignUserRoleCommandHandler(ILogger<AssignUserRoleCommandHandler> logger, 
         UserManager<User> userManager,
         RoleManager<IdentityRole> roleManager)
-        : IRequestHandler<AssignUserRoleCommand>
+        : IRequestHandler<UnAssignUserRoleCommand>
     {
-        public async Task Handle(AssignUserRoleCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UnAssignUserRoleCommand request, CancellationToken cancellationToken)
         {
             logger.LogInformation("Assigning role {@Request}", request);
             var user = await userManager.FindByEmailAsync(request.UserEmail);

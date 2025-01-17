@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Restaurants.Application.Users.Commands.AssignUserRole;
+namespace Restaurants.Application.Users.Commands.UnAssignUserRole;
 
 public class UnAssignUserRoleCommand : IRequest
 {
