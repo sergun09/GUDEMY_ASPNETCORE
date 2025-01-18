@@ -15,13 +15,14 @@ https://www.udemy.com/course/aspnet-core-web-api-clean-architecture-azure
 - Clean Architectute ✅
 - CRUD ✅
 - Authentification ✅
-- Authorization
+- Authorization (RBAC, Attribute Based, Ressource Based)
 - Filtering/Pagination
 - CI/CD
 - Test
-- Déploiement
+- Déploiement Azure
 
 ## Librairies utilisés (pour le moment) :
 
 - EF Core
 - Mediatr
+- Serilog
