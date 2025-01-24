@@ -11,6 +11,8 @@ public interface IRestaurantRepository
 {
     Task<IEnumerable<Restaurant>> GetAllAsync();
 
+    Task<IEnumerable<Restaurant>> GetAllMatchingAsync(string? searchTerm);
+
     Task<Restaurant?> GetById(int id);
 
     Task<int> Create(Restaurant restaurant);
