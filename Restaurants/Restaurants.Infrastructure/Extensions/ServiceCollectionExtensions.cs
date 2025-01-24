@@ -4,9 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Domain.Entities;
+using Restaurants.Domain.Interfaces;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Authorization;
 using Restaurants.Infrastructure.Authorization.Requirements;
+using Restaurants.Infrastructure.Authorization.Services;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
 using Restaurants.Infrastructure.Seeders;
@@ -34,13 +36,20 @@ public static class ServiceCollectionExtensions
 
 
         services.AddScoped<IAuthorizationHandler, MinAgeRequirementHandler>();
+        services.AddScoped<IAuthorizationHandler, MinimumNumberOfRestaurantsHandler>();
+
         services.AddAuthorizationBuilder()
             .AddPolicy(PolicyNames.HasNationality, builder => builder.RequireClaim(AppClaimTypes.Nationality, "French", "Turkish"))
             .AddPolicy(PolicyNames.AtLeast20, builder =>
             {
                 builder.AddRequirements(new MinAgeRequirement(18));
+            })
+            .AddPolicy(PolicyNames.CreatedAtLeast2Restaurants, builder =>
+            {
+                builder.AddRequirements(new MinimumNumberOfRestaurants(2));
             });
 
+        services.AddScoped<IRestaurantAuthorizationService, RestaurantAuthorizationService>();
     }
 
 }
